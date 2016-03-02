@@ -199,8 +199,7 @@ namespace NetMQ.Core.Patterns
                 }
                 else // process message unrelated to sub/unsub
                 {
-                    // pipe is null here, no special treatment
-                    m_pendingMessages.Enqueue(new KeyValuePair<Msg, Pipe>(sub, null));
+                    m_pendingMessages.Enqueue(new KeyValuePair<Msg, Pipe>(sub, pipe));
                 }
 
             }
@@ -357,6 +356,7 @@ namespace NetMQ.Core.Patterns
             msg.Close();
             var msgPipe = m_pendingMessages.Dequeue();
             msg = msgPipe.Key;
+            msg.Attachment = msgPipe.Value;
             // must check if m_lastPipe == null to avoid dequeue at the second frame of a broadcast message
             if (msgPipe.Value != null && m_lastPipe == null) 
             {

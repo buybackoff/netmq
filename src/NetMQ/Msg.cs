@@ -465,5 +465,21 @@ namespace NetMQ
 
             return data;
         }
+
+        /// <summary>
+        /// Optional object attached to a message.
+        /// Could be used as a storage for a tag or source.
+        /// </summary>
+        internal object Attachment
+        {
+            get
+            {
+                return m_refCount.Attachment;
+            }
+            set
+            {
+                m_refCount.Attachment = value;
+            }
+        }
     }
 }

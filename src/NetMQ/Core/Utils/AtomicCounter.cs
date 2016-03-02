@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 
 namespace NetMQ.Core.Utils
@@ -9,6 +10,8 @@ namespace NetMQ.Core.Utils
     internal sealed class AtomicCounter
     {
         private int m_value;
+
+        internal object m_attachment;
 
         /// <summary>
         /// Create a new AtomicCounter object with an initial counter-value of zero.
@@ -45,5 +48,21 @@ namespace NetMQ.Core.Utils
         {
             return Interlocked.Add(ref m_value, amount*-1);
         }
+
+        /// <summary>
+        /// Optional object attached to a message
+        /// </summary>
+        internal object Attachment
+        {
+            get
+            {
+                return m_attachment;
+            }
+            set
+            {
+                if(value != null) m_attachment = value;
+            }
+        }
+
     }
 }
