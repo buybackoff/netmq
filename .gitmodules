@@ -1,0 +1,4 @@
+[submodule "src/AsyncIO"]
+	path = src/AsyncIO
+	url = https://github.com/somdoron/AsyncIO.git
+	branch = master
