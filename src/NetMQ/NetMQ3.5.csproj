@@ -82,18 +82,60 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AsyncIO">
-      <HintPath>..\packages\AsyncIO.0.1.18.0\lib\net35\AsyncIO.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="JetBrains.Annotations">
       <HintPath>..\packages\JetBrains.Annotations.10.0.0\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.ServiceModel" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AsyncIO\Source\AsyncIO\AsyncSocket.cs">
+      <Link>Core\AsyncIO\AsyncSocket.cs</Link>
+    </Compile>
+    <Compile Include="..\AsyncIO\Source\AsyncIO\BlockingCollection.cs">
+      <Link>Core\AsyncIO\BlockingCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\AsyncIO\Source\AsyncIO\CompletionPort.cs">
+      <Link>Core\AsyncIO\CompletionPort.cs</Link>
+    </Compile>
+    <Compile Include="..\AsyncIO\Source\AsyncIO\CompletionStatus.cs">
+      <Link>Core\AsyncIO\CompletionStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\AsyncIO\Source\AsyncIO\ConcurrentQueue.cs">
+      <Link>Core\AsyncIO\ConcurrentQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\AsyncIO\Source\AsyncIO\DotNet\CompletionPort.cs">
+      <Link>Core\AsyncIO\DotNet\CompletionPort.cs</Link>
+    </Compile>
+    <Compile Include="..\AsyncIO\Source\AsyncIO\DotNet\NativeSocket.cs">
+      <Link>Core\AsyncIO\DotNet\NativeSocket.cs</Link>
+    </Compile>
+    <Compile Include="..\AsyncIO\Source\AsyncIO\ForceDotNet.cs">
+      <Link>Core\AsyncIO\ForceDotNet.cs</Link>
+    </Compile>
+    <Compile Include="..\AsyncIO\Source\AsyncIO\SocketExtensions.cs">
+      <Link>Core\AsyncIO\SocketExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\AsyncIO\Source\AsyncIO\Windows\CompletionPort.cs">
+      <Link>Core\AsyncIO\Windows\CompletionPort.cs</Link>
+    </Compile>
+    <Compile Include="..\AsyncIO\Source\AsyncIO\Windows\Overlapped.cs">
+      <Link>Core\AsyncIO\Windows\Overlapped.cs</Link>
+    </Compile>
+    <Compile Include="..\AsyncIO\Source\AsyncIO\Windows\PinnedBuffer.cs">
+      <Link>Core\AsyncIO\Windows\PinnedBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\AsyncIO\Source\AsyncIO\Windows\Socket.cs">
+      <Link>Core\AsyncIO\Windows\Socket.cs</Link>
+    </Compile>
+    <Compile Include="..\AsyncIO\Source\AsyncIO\Windows\SocketAddress.cs">
+      <Link>Core\AsyncIO\Windows\SocketAddress.cs</Link>
+    </Compile>
+    <Compile Include="..\AsyncIO\Source\AsyncIO\Windows\UnsafeMethods.cs">
+      <Link>Core\AsyncIO\Windows\UnsafeMethods.cs</Link>
+    </Compile>
     <Compile Include="BufferPool.cs" />
     <Compile Include="Core\Address.cs" />
     <Compile Include="Core\Command.cs" />
